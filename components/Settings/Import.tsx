@@ -20,17 +20,20 @@ export const Import: FC<Props> = ({ onImport }) => {
         className="sr-only"
         tabIndex={-1}
         type="file"
-        accept=".json"
+        accept=".txt"
         onChange={(e) => {
           if (!e.target.files?.length) return;
 
           const file = e.target.files[0];
-          const reader = new FileReader();
-          reader.onload = (e) => {
-            let json = JSON.parse(e.target?.result as string);
-            onImport(json);
-          };
-          reader.readAsText(file);
+          window.alert("Test")
+          const reader = new FileReader(); 
+          // reader.onload = (e) => {
+          //   let json = JSON.parse(e.target?.result as string);
+          //   onImport(json);
+          // };
+          window.alert("ALert");
+          
+          window.alert(reader.readAsText(file));
         }}
       />
 
